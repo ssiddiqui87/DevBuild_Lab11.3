@@ -1,0 +1,17 @@
+﻿@model CoffeeShop.Models.Register
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>Register</h1>
+
+
+You have successfully registered! The details of your registration are below:
+<br />
+Name: @Model.FirstName @Model.LastName<br />
+Email address: @Model.Email<br />
+Gender: @Model.Gender<br />
+Newsletter Subscription: @Model.Subscribe<br />
+                                         <br /><br />
+Your registration details and password have been emailed to @Model.Email
+

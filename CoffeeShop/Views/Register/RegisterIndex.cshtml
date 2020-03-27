@@ -1,0 +1,44 @@
+﻿@model CoffeeShop.Models.Register
+@{
+    ViewData["Title"] = "RegisterIndex";
+}
+
+<h1>Please enter your information below to register</h1>
+
+@{
+    if (ViewData["errorMsg"] != null)
+    {
+        <p><strong>@ViewData["errorMsg"]</strong></p>
+    }
+}
+
+
+<form asp-controller="Register" asp-action="Register" method="post">
+    @Html.LabelFor(m => m.FirstName) @Html.EditorFor(m => m.FirstName)<br />
+
+    @Html.LabelFor(m => m.LastName) @Html.EditorFor(m => m.LastName)<br />
+
+    @Html.LabelFor(m => m.Email) <input asp-for="Email" type="email" /><br />
+
+    @Html.LabelFor(m => m.Password) <input asp-for="Password" type="password" /><br />
+
+    @Html.LabelFor(m => m.Gender)
+    <select asp-for="Gender">
+
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+
+
+    </select>
+    <br />
+    @Html.LabelFor(m => m.Subscribe)
+    <select asp-for="Subscribe">
+        <option>Yes</option>
+        <option>No</option>
+    </select>
+    <br />
+
+    <input type="submit" value="Register Now" />
+</form>
+
