@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "ProductsIndex";
+    IEnumerable<Products> ProductList = (IEnumerable<Products>)ViewData["Products"];
+
+}
+
+<h1>Coffee Menu</h1>
+
+<div>What would you like to order?</div>
+<ul>
+    @foreach (Products p in ProductList)
+    {
+    <li>@p.Name - <strong>@p.Price.ToString("C")</strong>
+    <br />(@p.Category) - @p.Description </li>
+    }
+</ul>

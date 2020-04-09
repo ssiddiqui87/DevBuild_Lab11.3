@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "Coffee Shop Administration";
+    List<Products> Products = (List<Products>)ViewData["Products"];
+}
+
+<h1>Product Administration</h1>
+@if (TempData["UserMsg"] != null)
+{
+    <p>@TempData["UserMsg"]</p>
+}
+
+<div><a href="/Admin/AddForm" class="btn btn-success" role="button">Add</a></div>
+
+@foreach (Products p in Products)
+{
+    <div>
+        @p.Name (@p.Category) @p.Price.ToString("C")
+        <a href="/Admin/Edit/@p.Id">Edit</a>
+        <a href="/Admin/Delete/@p.Id">Delete</a>
+
+    </div>
+
+}
